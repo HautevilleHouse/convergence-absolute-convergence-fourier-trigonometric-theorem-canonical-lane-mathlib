@@ -1,0 +1,22 @@
+import canonicalLaneMathlib.AdmissibleClass
+import ConvergenceAbsoluteConvergenceFourierTrigonometricTheoremCanonicalLaneLean.FourierCoefficientAnalysis
+import ConvergenceAbsoluteConvergenceFourierTrigonometricTheoremCanonicalLaneLean.AbsoluteConvergenceTest
+import ConvergenceAbsoluteConvergenceFourierTrigonometricTheoremCanonicalLaneLean.FejerSummability
+import ConvergenceAbsoluteConvergenceFourierTrigonometricTheoremCanonicalLaneLean.CarlesonsTheorem
+
+/-!
+# Root Package for Convergence Absolute Convergence Fourier Trigonometric Theorem
+-/
+
+namespace HautevilleHouse
+namespace ConvergenceAbsoluteConvergenceFourierTrigonometricTheoremCanonicalLaneLean
+
+def ConstrainedFourierClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_fourier_endgame (A : AdmissibleClass) :
+    ConstrainedFourierClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ConvergenceAbsoluteConvergenceFourierTrigonometricTheoremCanonicalLaneLean
+end HautevilleHouse
